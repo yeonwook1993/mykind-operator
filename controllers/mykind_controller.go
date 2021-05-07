@@ -171,13 +171,14 @@ func (r *MykindReconciler) createDeployment(ins *webappv1alpha1.Mykind) *appsv1.
 					Labels: lb,
 				},
 				Spec: corev1.PodSpec{
+					ServiceAccountName: "mykind-operator-controller-manager",
 					Containers: []corev1.Container{{
 						Image:   "memcached:1.4.36-alpine",
-						Name:    "memcached",
-						Command: []string{"memcached", "-m=64", "-o", "modern", "-v"},
+						Name:    "mykind",
+						Command: []string{"mykind", "-m=64", "-o", "modern", "-v"},
 						Ports: []corev1.ContainerPort{{
 							ContainerPort: 11211,
-							Name:          "memcached",
+							Name:          "mykind",
 						}},
 					}},
 				},
