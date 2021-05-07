@@ -1,0 +1,16 @@
+domain: crd.tutorial.kubebuilder.io
+layout:
+- go.kubebuilder.io/v3
+projectName: mykind-operator
+repo: yeonwook1993/mykind-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: crd.tutorial.kubebuilder.io
+  group: webapp
+  kind: Mykind
+  path: yeonwook1993/mykind-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"
