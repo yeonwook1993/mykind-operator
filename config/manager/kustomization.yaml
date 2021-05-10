@@ -13,6 +13,6 @@ kind: Kustomization
 images:
 - name: controller
   newName: yeonwook1993/mykind-operator
-  newTag: v0.0.2
+  newTag: v0.0.5
 - name: yeonwook1993/mykind-operator
-  newTag: v0.0.2
+  newTag: v0.0.6
